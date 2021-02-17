@@ -1,5 +1,5 @@
 import functions from '../index';
-// import{originalFlavors}from '../index';
+ //import{is31Flavors}from '../index';
 let originalFlavors;
 beforeEach(()=>{
     originalFlavors = ["Banana Nut Fudge",
@@ -46,11 +46,15 @@ describe('copy', ()=>{
     })
 });
 describe('is31Flavors', ()=>{
-    it('is31Flavours returns true', ()=>{
+    it('is31Flavors returns true', ()=>{
+        
+        
+        
         expect(functions.is31Flavors(originalFlavors)).toBe(true);
+
     })
 });
-describe('addFlavor', ()=>{
+ describe('addFlavor', ()=>{
     it('addFlavor returns array with new flavor at beginning', ()=>{
         expect(functions.addFlavor(originalFlavors, 'Rainbow Sherbert')).toEqual([
             'Rainbow Sherbert',
