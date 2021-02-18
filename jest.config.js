@@ -28,7 +28,7 @@ module.exports = {
   //   "/node_modules/"
   // ],
 
-  // Indicates which provider should be used to instrument code for coverage
+  // Indiccates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
 
   // A list of reporter names that Jest uses when writing coverage reports
