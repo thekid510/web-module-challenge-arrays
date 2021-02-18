@@ -66,7 +66,7 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 
 
 function is31Flavors(array){
-    console.log(array.length);
+     console.log(array.length);
    
   return array.length  >=31;
 }
@@ -84,9 +84,11 @@ Use the addFlavor function below to do the following:
 
 
 function addFlavor(flavorsArray,newFlavor){
-   
+    
+    flavorsArray.unshift(newFlavor); 
+    return flavorsArray;
 }
-
+console.log(addFlavor(originalFlavors,'Rainbow Sherbert'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -99,10 +101,12 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
-   /*your code here*/
+function removeLastFlavor(flavarray){
+   
+flavarray.pop();
+return flavarray;
 }
-
+console.log(removeLastFlavor(originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -116,9 +120,16 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-    /*your code here*/
-}
+function getFlavorByIndex(Array,index){
+    Array[index]; 
+    return Array[index];
+   
+    
+    
+    }
+    console.log(getFlavorByIndex(originalFlavors,2));
+
+    
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -136,12 +147,16 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(array,string){
+    for(let i=0; i < array.length; i++){
+    if(array[i] === string){
+        array.splice(i,1);
+    }
 }
+    return array;
 
-
-
+}
+console.log(removeFlavorByName(originalFlavors,'Chocolate'));
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
 Your task is to write a function that checks every item in the array for a string and returns a new array called filteredArray with only the values 
@@ -162,9 +177,16 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+function filterByWord(array,string){
+    let newArray=[];
+    for(let i=0;i < array.length;i++){
+        if(array[i].includes(string)){
+            newArray.push(array[i])
+        }
+    }
+    return newArray;
 }
+console.log(filterByWord(originalFlavors,'Chocolate'));
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
